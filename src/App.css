@@ -1,38 +1,109 @@
+/*-------------ROOT--------------*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/*--------------APP--------------*/
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #F2F2F2;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  font-size: 24px;
 }
 
-.App-link {
-  color: #61dafb;
+/*--------------MAINPAGE--------------*/
+.top {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* margin-bottom: 30px; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1 {
+  margin: 30px;
+}
+
+/*--------------INPUT BAR--------------*/
+
+form {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+input {
+  width: 80%;
+  height: 50px;
+  border-radius: 30px;
+  padding-left: 50px;
+}
+
+.submit,
+.bookmarks {
+  padding: 10px 30px;
+  border-radius: 30px;
+  height: 50px;
+  background-color: #000000;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+}
+
+.submit:hover {
+  color: #000000;
+  background-color: #FFFFFF;
+}
+
+.bookmarks {
+  width: 15%;
+  background-color: #8f8f8f;
+  color: #FFFFFF;
+}
+
+.bookmarks:hover {
+  color: #8f8f8f;
+  background-color: #FFFFFF;
+}
+
+
+
+/*--------------IMAGES--------------*/
+
+.imageDiv {
+  flex: flex;
+  margin-bottom: 10px;
+  /* column-count: 3; */
+  position: relative;
+}
+
+.mainImage {
+  width: 100%;
+  height: 100%;
+  flex: 100%;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+.image-container {
+  column-count: 3;
+}
+
+.remove {
+  position: absolute;
+  bottom: 6px;
+  left: 25%;
+  text-align: center;
+  display: none;
+}
+
+.imageDiv:hover .add {
+  display: block;
+  cursor: pointer;
+  background-color: #fff;
 }
