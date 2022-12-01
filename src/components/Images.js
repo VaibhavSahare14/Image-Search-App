@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import { createApi } from 'unsplash-js';
+
+const unsplash = createApi({ accessKey: 'gQxWM63Q9iNh0bYGf0kQEb_juW5vfOaqlgxTVBiVpnc' });
 
 const Images = () => {
 
@@ -10,27 +13,10 @@ const Images = () => {
     const fetchPhotos = async (e) => {
         e.preventDefault();
 
-        let url = "https://api.unsplash.com/photos/?client_id=gQxWM63Q9iNh0bYGf0kQEb_juW5vfOaqlgxTVBiVpnc"
+        unsplash.search.getPhotos({
+            query: search
+        }).then(data => { setPhotos(data.response.results) })
 
-        const response = await fetch(url);
-        const responseJson = await response.json();
-
-        // setPhotos(responseJson);
-        // if (responseJson[0].alt_description !== null) {
-        //     console.log(responseJson[0].alt_description);
-        // } else {
-        //     console.log(responseJson[0].sponsorship.tagline);
-        // }
-        // console.log(responseJson[0]);
-
-        if (search !== "" && responseJson) {
-            // responseJson.filter(obj => {
-            //     return obj.includes(search)
-            // })
-            setPhotos(responseJson);
-        } else {
-            setPhotos(responseJson);
-        }
     }
 
     // useEffect(() => {
