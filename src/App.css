@@ -107,3 +107,9 @@ input {
   cursor: pointer;
   background-color: #fff;
 }
+
+.bookHeading {
+  width: 100%;
+  text-align: center;
+  color: red;
+}
